@@ -20,8 +20,16 @@ nav {
 
 main {
   background-color: rgb(167, 203, 233);
+  height: 32rem;
 }
 
 footer {
   background-color: rgb(143, 169, 143);
+  text-align: center;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(176, 118, 11);
 }
