@@ -1,20 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages";
-import Portfolio from "./pages";
-import About from "./pages";
-import Contact from "./pages";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route>
-          <Route index element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
+        <Route index element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
