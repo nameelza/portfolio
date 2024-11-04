@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        Lisa Svirshchyk | San Francisco Bay Area based commercial product &
+        Liza Svirshchyk | San Francisco Bay Area based commercial product &
         lifestyle photographer.
       </p>
       <p>lizasvirshchyk@gmail.com</p>
