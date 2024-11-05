@@ -33,15 +33,11 @@ nav {
   color: #663320;
 }
 
-.nav-link:hover {
-  text-decoration: underline;
-  text-decoration-color: #fc4700;
-  text-underline-offset: 6px;
-}
-
+.nav-link:hover,
 .nav-link.active {
   text-decoration: underline;
-  text-decoration-color: #fc4700;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #f66123;
   text-underline-offset: 6px;
 }
 
@@ -54,10 +50,10 @@ main {
 }
 
 footer {
-  background-color: #663320;
+  background-color: #f0d16e;
   text-align: center;
   padding: 1rem;
-  color: #ffffff;
+  color: #663320;
   font-weight: 600;
 }
 
@@ -66,4 +62,14 @@ footer {
   font-weight: 700;
   text-decoration: none;
   color: #663320;
+}
+
+.big {
+  font-size: 2ch;
+  font-weight: 800;
+}
+
+.small {
+  font-size: 18px;
+  font-weight: 400;
 }

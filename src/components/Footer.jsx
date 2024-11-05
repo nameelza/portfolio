@@ -2,13 +2,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer>
-      <p>
-        Liza Svirshchyk | San Francisco Bay Area based commercial product &
+      <p className="small">
+        Lizaveta Svirshchyk | San Francisco Bay Area based commercial product &
         lifestyle photographer.
       </p>
-      <p>lizasvirshchyk@gmail.com</p>
-      <p>*instagram link*</p>
-      <p>© {currentYear} Lizaveta Svirshchyk</p>
+      <p className="big">lizasvirshchyk@gmail.com</p>
+      <p className="small">© {currentYear} Lizaveta Svirshchyk</p>
     </footer>
   );
 };
