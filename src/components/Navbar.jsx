@@ -1,5 +1,14 @@
 import { NavLink } from "react-router-dom";
 
+const NavbarLink = ({ to, label }) => (
+  <NavLink
+    to={to}
+    className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+  >
+    {label}
+  </NavLink>
+);
+
 const Navbar = () => {
   return (
     <nav>
@@ -11,30 +20,10 @@ const Navbar = () => {
       </div>
       <div className="nav-right">
         <div className="nav-links">
-          <NavLink
-            to="/"
-            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/portfolio"
-            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-          >
-            Portfolio
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-          >
-            Contact
-          </NavLink>
+          <NavbarLink to="/" label="Home" />
+          <NavbarLink to="/portfolio" label="Portfolio" />
+          <NavbarLink to="/about" label="About" />
+          <NavbarLink to="/contact" label="Contact" />
         </div>
       </div>
     </nav>
