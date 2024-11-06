@@ -44,9 +44,10 @@ nav {
 main {
   background-color: #ebd8c3;
   color: #663320;
-  height: 35rem;
   text-align: center;
   padding: 1rem;
+  min-height: 100vh;
+  max-height: fit-content;
 }
 
 footer {
@@ -72,4 +73,21 @@ footer {
 .small {
   font-size: 18px;
   font-weight: 400;
+}
+
+.portfolio-container {
+  column-count: auto; /* You can set a fixed number like 3, or let it adjust automatically */
+  column-width: 300px; /* Minimum width of each column */
+  column-gap: 20px; /* Space between columns */
+}
+
+.img-placeholder {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.img {
+  width: 100%;
+  height: auto;
 }
