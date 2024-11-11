@@ -8,6 +8,7 @@ nav {
   top: 0;
   padding: 1rem;
   color: #663320;
+  z-index: 5;
 }
 
 .nav-left {
@@ -76,18 +77,56 @@ footer {
 }
 
 .portfolio-container {
-  column-count: auto; /* You can set a fixed number like 3, or let it adjust automatically */
-  column-width: 300px; /* Minimum width of each column */
-  column-gap: 20px; /* Space between columns */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .img-placeholder {
-  display: inline-block;
+  position: relative;
   width: 100%;
-  margin-bottom: 20px; /* Space between rows */
+  overflow: hidden;
 }
 
 .img {
   width: 100%;
   height: auto;
+  display: block;
+  object-fit: cover;
 }
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+  .portfolio-container {
+    flex-direction: column;
+  }
+  .column {
+    max-width: 100%;
+  }
+} */
+
+/* .portfolio-container {
+  column-count: auto;
+  column-width: 300px;
+  column-gap: 20px;
+}
+
+.img-placeholder {
+  display: inline-block;
+  width: 100%;
+  transition: all 0.25s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.img {
+  width: 100%;
+  transition: all 0.25s ease-in-out;
+} */
