@@ -20,10 +20,12 @@ const Navbar = () => {
       </div>
       <div className="nav-right">
         <div className="nav-links">
-          <NavbarLink to="/" label="Home" />
-          <NavbarLink to="/portfolio" label="Portfolio" />
-          <NavbarLink to="/about" label="About" />
-          <NavbarLink to="/contact" label="Contact" />
+          <NavbarLink to="/" label="HOME" />
+          <NavbarLink to="/portfolio" label="PORTFOLIO" />
+          <NavbarLink to="/about" label="ABOUT" />
+          <NavLink to="/contact" className="contact-button">
+            CONTACT
+          </NavLink>
         </div>
       </div>
     </nav>

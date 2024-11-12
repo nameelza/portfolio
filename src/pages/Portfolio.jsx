@@ -4,7 +4,6 @@ const images = require.context(
   /\.(png|jpe?g|svg|jpeg|webp)$/i
 );
 const imageList = images.keys().map((image) => images(image));
-console.log(imageList);
 
 const Portfolio = () => {
   const columnCount = 4;
