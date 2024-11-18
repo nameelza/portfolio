@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 const images = require.context(
   "../assets/images",
   false,
@@ -9,12 +11,36 @@ const Portfolio = () => {
   const columnCount = 4;
   const imageColumns = generateImageColumns(imageList, columnCount);
 
+  const [loaded, setLoaded] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const revealElements = document.querySelectorAll(".img-placeholder");
+      revealElements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8 && !loaded.includes(index)) {
+          setLoaded((prev) => [...prev, index]);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger on initial load
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loaded]);
+
   return (
     <div className="portfolio-container">
       {imageColumns.map((columnImages, columnIndex) => (
         <div className="column" key={columnIndex}>
           {columnImages.map((image, imageIndex) => (
-            <div className="img-placeholder" key={imageIndex}>
+            <div
+              key={imageIndex}
+              className={`img-placeholder ${
+                loaded.includes(imageIndex) ? "loaded" : ""
+              }`}
+              style={{ transitionDelay: `${imageIndex * 100}ms` }}
+            >
               <img
                 src={image}
                 loading="lazy"
