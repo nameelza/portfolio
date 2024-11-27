@@ -43,9 +43,9 @@ nav {
   padding: 1rem;
   border: 2px solid #194027;
   border-radius: 90%;
-  margin-left: 30px;
+  margin-left: 20px;
   margin-right: 10px;
-  transition: all 0.1s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-button:hover {
@@ -102,10 +102,12 @@ main {
   padding: 20px;
   text-decoration: none;
   width: 250px;
+  transition: all 0.3s ease-out;
 }
 
 .sub-category:hover {
   background-color: #4c715a;
+  margin-top: 5px;
 }
 
 .sub-category img {
