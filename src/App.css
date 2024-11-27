@@ -84,28 +84,62 @@ main {
   background-color: #f4ee83;
 }
 
-.about-container {
-  padding: 20px;
+.m-3 {
   display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.sub-category {
+  align-items: center;
+  background-color: #194027;
+  color: #fef6ed;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 3ch;
+  height: 300px;
+  padding: 20px;
+  width: 250px;
+}
+
+.sub-category img {
+  border-radius: 50%;
+  height: 250px;
+  margin: 5px;
+  margin: 10px 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+#outdoors-img {
+  object-position: bottom;
+}
+
+.about-container {
+  display: flex;
+  padding: 20px;
 }
 
 .about-container img {
+  display: block;
   height: 600px;
+  object-fit: cover;
 }
 
 footer {
   background-color: #194027;
-  text-align: center;
-  padding: 1rem;
   color: #fef6ed;
   font-weight: 600;
+  padding: 1rem;
+  text-align: center;
 }
 
 .logo {
+  color: #194027;
   font-size: 3ch;
   font-weight: 700;
   text-decoration: none;
-  color: #194027;
 }
 
 .big {
