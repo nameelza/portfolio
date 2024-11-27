@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import img1 from "../assets/mainImages/1.jpg";
 import img2 from "../assets/mainImages/2.JPG";
 import jewelryImg from "../assets/mainImages/jewelry.JPG";
@@ -17,22 +19,22 @@ const Home = () => {
       </div>
       <div className="main-container m-2"></div>
       <div className="main-container m-3">
-        <div className="sub-category">
+        <NavLink to="/portfolio" className="sub-category">
           <span>Still life</span>
           <img src={stillImg} alt="mainImg" />
-        </div>
-        <div className="sub-category">
+        </NavLink>
+        <NavLink to="/portfolio" className="sub-category">
           <span>Jewelry</span>
           <img src={jewelryImg} alt="mainImg" />
-        </div>
-        <div className="sub-category">
-          <span>Food+Beverage</span>
+        </NavLink>
+        <NavLink to="/portfolio" className="sub-category">
+          <span>Food&Beverage</span>
           <img src={foodImg} alt="mainImg" />
-        </div>
-        <div className="sub-category">
+        </NavLink>
+        <NavLink to="/portfolio" className="sub-category">
           <span>Outdoors</span>
           <img src={outdoorsImg} alt="mainImg" id="outdoors-img" />
-        </div>
+        </NavLink>
       </div>
     </div>
   );

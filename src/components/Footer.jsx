@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <footer>
       <p className="small">
-        Lizaveta Svirshchyk | San Francisco Bay Area based commercial product &
+        Lizaveta Svirshchyk | San Francisco Bay Area | Commercial product &
         lifestyle photographer.
       </p>
       <p className="big">lizasvirshchyk@gmail.com</p>

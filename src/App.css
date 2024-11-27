@@ -100,7 +100,12 @@ main {
   font-size: 3ch;
   height: 300px;
   padding: 20px;
+  text-decoration: none;
   width: 250px;
+}
+
+.sub-category:hover {
+  background-color: #4c715a;
 }
 
 .sub-category img {
