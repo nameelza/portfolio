@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const images = require.context(
   "../assets/images",
@@ -11,41 +11,17 @@ const Portfolio = () => {
   const columnCount = 4;
   const imageColumns = generateImageColumns(imageList, columnCount);
 
-  const [loaded, setLoaded] = useState([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const revealElements = document.querySelectorAll(".img-placeholder");
-      revealElements.forEach((el, index) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8 && !loaded.includes(index)) {
-          setLoaded((prev) => [...prev, index]);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Trigger on initial load
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [loaded]);
-
   return (
     <div className="portfolio-container">
       {imageColumns.map((columnImages, columnIndex) => (
         <div className="column" key={columnIndex}>
           {columnImages.map((image, imageIndex) => (
-            <div
-              key={imageIndex}
-              className={`img-placeholder ${
-                loaded.includes(imageIndex) ? "loaded" : ""
-              }`}
-              style={{ transitionDelay: `${imageIndex * 100}ms` }}
-            >
-              <img
+            <div key={imageIndex} className="img-placeholder shimmer">
+              <LazyLoadImage
                 src={image}
-                loading="lazy"
                 alt={`image-${columnIndex}-${imageIndex}`}
                 className="img"
+                effect="blur"
               />
             </div>
           ))}

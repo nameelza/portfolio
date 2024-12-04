@@ -183,14 +183,8 @@ footer {
   position: relative;
   width: 100%;
   overflow: hidden;
-  opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.6s ease;
-}
-
-.loaded {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .img {
@@ -204,6 +198,24 @@ footer {
   .portfolio-container {
     flex-direction: column;
   }
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  background-color: #f4ee83;
+  margin-top: 10px;
+}
+
+.portfolio-link:hover .dropdown {
+  display: block;
+}
+
+.dropdown ul {
+  list-style-type: none;
+  padding: 15px 20px;
+  margin: 0;
 }
 
 /* .portfolio-container {

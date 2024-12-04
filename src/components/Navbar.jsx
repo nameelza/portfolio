@@ -1,11 +1,16 @@
 import { NavLink } from "react-router-dom";
+import Dropdown from "./Dropdown";
 
 const NavbarLink = ({ to, label }) => (
   <NavLink
     to={to}
-    className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+    className={({ isActive }) =>
+      `nav-link ${isActive && "active"} ${(label =
+        "portfolio" && "portfolio-link")}`
+    }
   >
     {label}
+    {label === "PORTFOLIO" && <Dropdown />}
   </NavLink>
 );
 
