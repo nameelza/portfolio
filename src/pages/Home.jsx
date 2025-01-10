@@ -13,8 +13,8 @@ const Home = () => {
       <div className="main-container m-1">
         <img src={img1} alt="mainImg" />
         <div>
-          <img src={img2} alt="mainImg" />
-          <h1>Photographer based in San Francisco Bay Area</h1>
+          <h1>Photographer&stylist based in San Francisco Bay Area</h1>
+          <button>get in touch</button>
         </div>
       </div>
       <div className="main-container m-2"></div>

@@ -1,34 +1,13 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const images = require.context(
-  "../assets/images",
-  false,
-  /\.(png|jpe?g|svg|jpeg|webp)$/i
-);
-const imageList = images.keys().map((image) => images(image));
-
-const Portfolio = () => {
-  const columnCount = 4;
-  const imageColumns = generateImageColumns(imageList, columnCount);
-
-  return (
-    <div className="portfolio-container">
-      {imageColumns.map((columnImages, columnIndex) => (
-        <div className="column" key={columnIndex}>
-          {columnImages.map((image, imageIndex) => (
-            <div key={imageIndex} className="img-placeholder shimmer">
-              <LazyLoadImage
-                src={image}
-                alt={`image-${columnIndex}-${imageIndex}`}
-                className="img"
-                effect="blur"
-              />
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
+const getImages = () => {
+  const images = require.context(
+    "../assets/images",
+    false,
+    /\.(png|jpe?g|svg|jpeg|webp)$/i
   );
+  const imageList = images.keys().map((image) => images(image));
+  return imageList;
 };
 
 const getRelativeImageHeight = (imageUrl, targetWidth) => {
@@ -56,5 +35,30 @@ function generateImageColumns(images, columnCount) {
 
   return columns;
 }
+
+const Portfolio = ({ category }) => {
+  const columnCount = 4;
+  const imageList = getImages();
+  const imageColumns = generateImageColumns(imageList, columnCount);
+
+  return (
+    <div className="portfolio-container">
+      {imageColumns.map((columnImages, columnIndex) => (
+        <div className="column" key={columnIndex}>
+          {columnImages.map((image, imageIndex) => (
+            <div key={imageIndex} className="img-placeholder shimmer">
+              <LazyLoadImage
+                src={image}
+                alt={`image-${columnIndex}-${imageIndex}`}
+                className="img"
+                effect="blur"
+              />
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Portfolio;
