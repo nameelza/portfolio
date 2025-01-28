@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import CategoryLink from "../components/CategoryLink";
 
 import img1 from "../assets/mainImages/1.jpg";
 import img2 from "../assets/mainImages/2.JPG";
@@ -10,9 +11,9 @@ import foodImg from "../assets/mainImages/food.webp";
 import outdoorsImg from "../assets/mainImages/outdoors.jpg";
 import stillImg from "../assets/mainImages/still3.jpg";
 
-const Home = () => {
-  const images = [img1, img2];
+const images = [img1, img2];
 
+const Home = () => {
   const [currIndex, setCurrIndex] = useState(0);
 
   console.log(currIndex);
@@ -21,16 +22,18 @@ const Home = () => {
     const switchImage = () => {
       setCurrIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
+
     const interval = setInterval(switchImage, 1500);
     console.log(currIndex, "curr");
 
     return () => clearInterval(interval);
-  }, [images]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="main">
       <div className="main-container m-1">
-        <img src={images[currIndex]} alt="mainImg" />
+        <img src={images[currIndex]} alt="Product Photography" />
         <div>
           <h1>Photographer&stylist based in San Francisco Bay Area</h1>
           <button>get in touch</button>
@@ -38,22 +41,30 @@ const Home = () => {
       </div>
       <div className="main-container m-2"></div>
       <div className="main-container m-3">
-        <NavLink to="/portfolio" className="sub-category">
-          <span>Still life</span>
-          <img src={stillImg} alt="mainImg" />
-        </NavLink>
-        <NavLink to="/portfolio" className="sub-category">
-          <span>Jewelry</span>
-          <img src={jewelryImg} alt="mainImg" />
-        </NavLink>
-        <NavLink to="/portfolio" className="sub-category">
-          <span>Food&Beverage</span>
-          <img src={foodImg} alt="mainImg" />
-        </NavLink>
-        <NavLink to="/portfolio" className="sub-category">
-          <span>Outdoors</span>
-          <img src={outdoorsImg} alt="mainImg" id="outdoors-img" />
-        </NavLink>
+        <CategoryLink
+          to="/portfolio"
+          label="Still life"
+          src={stillImg}
+          imgAlt="Still Life Photography"
+        />
+        <CategoryLink
+          to="/portfolio"
+          label="Jewelry"
+          src={jewelryImg}
+          imgAlt="Jewelry Photography"
+        />
+        <CategoryLink
+          to="/portfolio"
+          label="Food&Beverage"
+          src={foodImg}
+          imgAlt="Food and Beverage Photography"
+        />
+        <CategoryLink
+          to="/portfolio"
+          label="Outdoors"
+          src={outdoorsImg}
+          imgAlt="Outdoors Photography"
+        />
       </div>
     </div>
   );
