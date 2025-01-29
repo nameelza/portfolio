@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import CategoryLink from "../components/CategoryLink";
 
 import img1 from "../assets/mainImages/1.jpg";
 import img2 from "../assets/mainImages/2.JPG";
-import img3 from "../assets/mainImages/2.JPG";
-import img4 from "../assets/mainImages/2.JPG";
+// simport img3 from "../assets/mainImages/2.JPG";
+// import img4 from "../assets/mainImages/2.JPG";
 import jewelryImg from "../assets/mainImages/jewelry.JPG";
 import foodImg from "../assets/mainImages/food.webp";
 import outdoorsImg from "../assets/mainImages/outdoors.jpg";
