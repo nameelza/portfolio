@@ -197,7 +197,7 @@ main {
 }
 
 .m-1 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 800;
   width: 100%;
   text-align: center;
@@ -294,6 +294,11 @@ main {
     height: 500px;
     width: auto;
     object-fit: contain;
+  }
+
+  .m-1 h1 {
+    font-size: 2.5rem;
+    text-align: left;
   }
 
   .main-text {
