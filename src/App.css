@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
 nav {
   background-color: #fef6ed;
   display: flex;
@@ -62,7 +69,7 @@ nav {
   border: none;
   position: absolute;
   z-index: 20;
-  top: 18px;
+  top: 20px;
   right: 10px;
   flex-direction: column;
   cursor: pointer;
@@ -74,13 +81,13 @@ nav {
   height: 2px;
   width: 40px;
   transition: all 0.3s ease;
-  margin: 6px;
+  margin: 5px;
 }
 
 /* Toggle hamburger to close icon */
 .hamburger.open .line:nth-child(1) {
-  transform: translateY(14px) rotate(45deg);
-  width: 50px;
+  transform: translateY(12px) rotate(45deg);
+  width: 40px;
 }
 
 .hamburger.open .line:nth-child(2) {
@@ -88,8 +95,8 @@ nav {
 }
 
 .hamburger.open .line:nth-child(3) {
-  transform: translateY(-14px) rotate(-45deg);
-  width: 50px;
+  transform: translateY(-12px) rotate(-45deg);
+  width: 40px;
 }
 
 @media (max-width: 768px) {
@@ -99,6 +106,7 @@ nav {
 
   .nav-links {
     display: none;
+    opacity: 0;
   }
 
   .nav-links.open {
@@ -115,12 +123,50 @@ nav {
     gap: 1.5rem;
     z-index: 10;
     padding-top: 2rem;
-    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transform: translateY(20px);
+  }
+
+  .nav-links.open {
+    animation: fadeInUp 0.3s ease-in-out forwards;
+  }
+
+  .nav-links.closing {
+    animation: fadeOutDown 0.3s ease-in-out forwards;
   }
 
   .nav-left {
     width: 80%;
     font-size: 0.8rem;
+  }
+
+  .contact-button {
+    border: none;
+    margin: 0px;
+  }
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for fade-out effect */
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
   }
 }
 
@@ -138,10 +184,10 @@ main {
 }
 
 .m-1 {
-  font-size: 1.875rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  font-size: 1.875rem;
+  text-align: center;
   gap: 1rem;
 }
 
@@ -151,10 +197,16 @@ main {
 }
 
 .m-1 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
   width: 100%;
   text-align: start;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .m-2 {
@@ -192,6 +244,23 @@ main {
   object-fit: cover;
 }
 
+.button {
+  background: #194027;
+  color: #fef6ed;
+  text-decoration: none;
+  border-radius: 45px;
+  width: fit-content;
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 1ch;
+}
+
+.button a:visited,
+.button a {
+  color: #fef6ed;
+  text-decoration: none;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .m-3 {
     gap: 20px;
@@ -215,13 +284,24 @@ main {
   }
 
   .m-1 {
-    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 600px;
+    height: fit-content;
   }
 
   .m-1 img {
-    height: 100%;
+    height: 550px;
     width: auto;
     object-fit: contain;
+  }
+
+  .main-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: flex-start;
   }
 
   .m-3 {
