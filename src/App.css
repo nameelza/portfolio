@@ -294,8 +294,8 @@ main {
 
   .m-1 img {
     height: 500px;
-    width: auto;
-    object-fit: contain;
+    width: 400px;
+    object-fit: cover;
   }
 
   .m-1 h1 {
