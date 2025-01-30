@@ -54,9 +54,10 @@ const Navbar = () => {
           <NavbarLink to="/" label="HOME" closeMenu={closeMenu} />
           <NavbarLink to="/portfolio" label="PORTFOLIO" closeMenu={closeMenu} />
           <NavbarLink to="/about" label="ABOUT" closeMenu={closeMenu} />
-          <NavLink to="/contact" className="contact-button" onClick={closeMenu}>
+          <NavbarLink to="/contact" label="CONTACT ME" closeMenu={closeMenu} />
+          {/* <NavLink to="/contact" className="contact-button" onClick={closeMenu}>
             CONTACT
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
       <button

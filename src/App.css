@@ -45,7 +45,7 @@ nav {
   text-underline-offset: 6px;
 }
 
-.contact-button {
+/* .contact-button {
   color: #194027;
   text-decoration: none;
   padding: 1rem;
@@ -60,7 +60,7 @@ nav {
 .contact-button:hover {
   background-color: #194027;
   color: #f4ee83;
-}
+} */
 
 /* Hamburger menu button (hidden on larger screens) */
 .hamburger {
@@ -200,7 +200,7 @@ main {
   font-size: 1.5rem;
   font-weight: 800;
   width: 100%;
-  text-align: start;
+  text-align: center;
 }
 
 .main-text {
@@ -255,10 +255,10 @@ main {
   font-size: 1ch;
 }
 
-.button a:visited,
-.button a {
-  color: #fef6ed;
-  text-decoration: none;
+.button:hover {
+  background: #94c8a7;
+  color: #194027;
+  transition: all 0.2s ease;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -285,14 +285,13 @@ main {
 
   .m-1 {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    min-height: 600px;
     height: fit-content;
+    gap: 80px;
   }
 
   .m-1 img {
-    height: 550px;
+    height: 500px;
     width: auto;
     object-fit: contain;
   }

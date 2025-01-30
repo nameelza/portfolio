@@ -37,9 +37,9 @@ const Home = () => {
         <img src={images[currIndex]} alt="Product Photography" />
         <div className="main-text">
           <h1>Photographer&stylist based in San Francisco Bay Area</h1>
-          <div className="button">
-            <NavLink to="/contact">Get in touch</NavLink>
-          </div>
+          <NavLink to="/contact" className="button">
+            Get in touch
+          </NavLink>
         </div>
       </div>
       <div className="main-container m-2"></div>
