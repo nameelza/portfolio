@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import CategoryLink from "../components/CategoryLink";
 
@@ -32,41 +33,58 @@ const Home = () => {
   return (
     <div className="main">
       <div className="main-container m-1">
-        <img src={images[currIndex]} alt="Product Photography" />
-        <div className="main-text">
+        <motion.img
+          src={images[currIndex]}
+          alt="Product Photography"
+          className="main-image"
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+        />
+        <motion.div
+          className="main-text"
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+        >
           <h1>Photographer&stylist based in San Francisco Bay Area</h1>
           <NavLink to="/contact" className="button">
             Get in touch
           </NavLink>
-        </div>
+        </motion.div>
       </div>
       <div className="main-container m-2"></div>
-      <div className="main-container m-3">
+      <motion.div
+        className="main-container m-3"
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, delay: 2 }}
+      >
         <CategoryLink
-          to="/portfolio"
+          to="/portfolio?category=still-life"
           label="Still life"
           src={stillImg}
           imgAlt="Still Life Photography"
         />
         <CategoryLink
-          to="/portfolio"
+          to="/portfolio?category=jewelry"
           label="Jewelry"
           src={jewelryImg}
           imgAlt="Jewelry Photography"
         />
         <CategoryLink
-          to="/portfolio"
+          to="/portfolio?category=food"
           label="Food&Beverage"
           src={foodImg}
           imgAlt="Food and Beverage Photography"
         />
         <CategoryLink
-          to="/portfolio"
+          to="/portfolio?category=outdoors"
           label="Outdoors"
           src={outdoorsImg}
           imgAlt="Outdoors Photography"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
