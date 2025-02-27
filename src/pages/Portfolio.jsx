@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const getImages = () => {
   const images = require.context(
@@ -35,11 +36,14 @@ function generateImageColumns(images, columnCount) {
   return columns;
 }
 
-const Portfolio = ({ category }) => {
+const Portfolio = () => {
   const columnCount = 4;
   const imageList = getImages();
   const imageColumns = generateImageColumns(imageList, columnCount);
 
+  const [searchParams] = useSearchParams();
+  console.log("searchParams", searchParams);
+  const category = searchParams.get("category");
   console.log("category", category);
   return (
     <div className="portfolio-container">
