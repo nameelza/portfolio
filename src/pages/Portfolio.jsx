@@ -2,14 +2,41 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const getImages = () => {
-  const images = require.context(
-    "../assets/images",
-    false,
-    /\.(png|jpe?g|svg|jpeg|webp)$/i
-  );
-  const imageList = images.keys().map((image) => images(image));
-  return imageList;
+const getImages = (category) => {
+  let images;
+  if (category === "stillLife") {
+    images = require.context(
+      "../assets/stillLife",
+      false,
+      /\.(png|jpe?g|svg|jpeg|webp)$/i
+    );
+  } else if (category === "jewelry") {
+    images = require.context(
+      "../assets/jewelry",
+      false,
+      /\.(png|jpe?g|svg|jpeg|webp)$/i
+    );
+  } else if (category === "food") {
+    images = require.context(
+      "../assets/food",
+      false,
+      /\.(png|jpe?g|svg|jpeg|webp)$/i
+    );
+  } else if (category === "outdoors") {
+    images = require.context(
+      "../assets/outdoors",
+      false,
+      /\.(png|jpe?g|svg|jpeg|webp)$/i
+    );
+  } else {
+    images = require.context(
+      "../assets/images",
+      false,
+      /\.(png|jpe?g|svg|jpeg|webp)$/i
+    );
+  }
+
+  return images.keys().map(images);
 };
 
 const getRelativeImageHeight = (imageUrl, targetWidth) => {
@@ -37,14 +64,13 @@ function generateImageColumns(images, columnCount) {
 }
 
 const Portfolio = () => {
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category");
+  const imageList = getImages(category);
+
   const columnCount = 4;
-  const imageList = getImages();
   const imageColumns = generateImageColumns(imageList, columnCount);
 
-  const [searchParams] = useSearchParams();
-  console.log("searchParams", searchParams);
-  const category = searchParams.get("category");
-  console.log("category", category);
   return (
     <div className="portfolio-container">
       {imageColumns.map((columnImages, columnIndex) => (

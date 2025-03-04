@@ -61,7 +61,7 @@ const Home = () => {
         transition={{ duration: 1.5, delay: 2 }}
       >
         <CategoryLink
-          to="/portfolio?category=still-life"
+          to="/portfolio?category=stillLife"
           label="Still life"
           src={stillImg}
           imgAlt="Still Life Photography"
