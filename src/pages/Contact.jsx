@@ -166,7 +166,6 @@ const Contact = () => {
             <div className="form-group">
               <label htmlFor="deadline" className="form-label">
                 Timeline
-                <small className="contact-small"> (required)</small>
               </label>
               <input
                 id="deadline"
@@ -200,14 +199,12 @@ const Contact = () => {
             <div className="form-group">
               <label htmlFor="numberOfShots" className="form-label">
                 Number of Shots Needed
-                <small className="contact-small"> (required)</small>
               </label>
               <input
                 id="numberOfShots"
                 name="numberOfShots"
                 value={formData.numberOfShots}
                 onChange={handleChange}
-                required
                 className="form-input"
               />
             </div>
@@ -215,14 +212,12 @@ const Contact = () => {
             <div className="form-group">
               <label htmlFor="productDescription" className="form-label">
                 Your Brand
-                <small className="contact-small"> (required)</small>
               </label>
               <textarea
                 id="productDescription"
                 name="productDescription"
                 value={formData.productDescription}
                 onChange={handleChange}
-                required
                 rows="4"
                 className="form-textarea"
                 placeholder="Please tell me a bit more about your product and brand"
