@@ -45,7 +45,14 @@ const Contact = () => {
           <span>let's work together</span>
         </div>
       </div>
+
       <div className="contact-container">
+        <div className="contact-description">
+          I'd love to hear from you! Feel free to fill out the intake form or
+          email me directly at lizasvirshchyk@gmail.com and I'll be reaching
+          back to you within 2 business days. Looking forward to learning more
+          about your project!
+        </div>
         <form onSubmit={handleSubmit} className="form-section">
           {/* Client Information Section */}
           <section className="form-section">

@@ -2,6 +2,15 @@
   max-width: 42rem;
   margin: 0 auto;
   padding: 1.5rem;
+  color: #194027;
+}
+
+.contact-description {
+  padding: 1rem 0;
+  margin-bottom: 4rem;
+  font-size: 2ch;
+  color: #194027;
+  text-align: left;
 }
 
 .contact-title {
@@ -51,16 +60,23 @@
 
 .submit-button {
   width: 100%;
-  background-color: black;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.25rem;
-  font-weight: 600;
+  background: #194027;
+  color: #fef6ed;
+  text-decoration: none;
+  border: none;
+  border-radius: 45px;
+  padding: 8px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5ch;
   transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
-  background-color: #333;
+  background: #94c8a7;
+  color: #194027;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 /* Media query for tablet and desktop */
