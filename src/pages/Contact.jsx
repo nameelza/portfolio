@@ -189,6 +189,7 @@ const Contact = () => {
                 className="form-select"
               >
                 <option value="">Select a range</option>
+                <option value="500-1000">$500 - $1000</option>
                 <option value="1000-2500">$1,000 - $2,500</option>
                 <option value="2500-5000">$2,500 - $5,000</option>
                 <option value="5000-10000">$5,000 - $10,000</option>
