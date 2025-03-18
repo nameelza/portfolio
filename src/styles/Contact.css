@@ -73,3 +73,35 @@
 .contact-small {
   color: rgb(187, 175, 154);
 }
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%; /* Full viewport width */
+  color: #ece679;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+.marquee__inner {
+  display: inline-flex;
+  animation: marqueeAnimation 30s linear infinite;
+  gap: 30px;
+}
+
+.marquee__inner span {
+  margin-right: 2rem; /* Space between repeats */
+  font-size: 5ch;
+}
+
+@keyframes marqueeAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
