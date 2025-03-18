@@ -10,12 +10,12 @@ const Contact = () => {
     phone: "",
 
     // Project Details
-    projectType: "product", // Default value
     deadline: "",
     budget: "",
 
     // Shoot Details
     numberOfProducts: "",
+    numberOfShots: "",
     locationPreference: "studio", // Default value
     productDescription: "",
 
@@ -76,11 +76,28 @@ const Contact = () => {
               />
             </div>
           </div>
+
+          <div className="form-group">
+            <label htmlFor="productDescription" className="form-label">
+              Message
+              <small className="contact-small"> (required)</small>
+            </label>
+            <textarea
+              id="productDescription"
+              name="productDescription"
+              value={formData.productDescription}
+              onChange={handleChange}
+              required
+              rows="4"
+              className="form-textarea"
+            />
+          </div>
         </section>
 
         {/* Project Details Section */}
         <section className="form-section">
           <h2 className="section-title">Project Details</h2>
+
           <div className="form-group">
             <label htmlFor="deadline" className="form-label">
               Timeline
@@ -92,7 +109,7 @@ const Contact = () => {
               value={formData.deadline}
               onChange={handleChange}
               className="form-input"
-              placeholder="When do you need these images?"
+              placeholder="When do you need these images delivered?"
             />
           </div>
 
@@ -114,26 +131,26 @@ const Contact = () => {
               <option value="10000plus">$10,000+</option>
             </select>
           </div>
-        </section>
 
-        {/* Shoot Details */}
-        <section className="form-section">
           <div className="form-group">
-            <label htmlFor="numberOfProducts" className="form-label">
-              Number of Products/Shots Needed
+            <label htmlFor="numberOfShots" className="form-label">
+              Number of Shots Needed
+              <small className="contact-small"> (required)</small>
             </label>
             <input
-              id="numberOfProducts"
-              name="numberOfProducts"
-              value={formData.numberOfProducts}
+              id="numberOfShots"
+              name="numberOfShots"
+              value={formData.numberOfShots}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </div>
 
           <div className="form-group">
             <label htmlFor="productDescription" className="form-label">
-              Product/Project Description *
+              Your Brand
+              <small className="contact-small"> (required)</small>
             </label>
             <textarea
               id="productDescription"
@@ -143,37 +160,7 @@ const Contact = () => {
               required
               rows="4"
               className="form-textarea"
-              placeholder="Please describe your products and specific requirements..."
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="referenceImages" className="form-label">
-              Reference Images (URLs)
-            </label>
-            <textarea
-              id="referenceImages"
-              name="referenceImages"
-              value={formData.referenceImages}
-              onChange={handleChange}
-              rows="2"
-              className="form-textarea"
-              placeholder="Please provide links to any reference images..."
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="additionalNotes" className="form-label">
-              Additional Notes
-            </label>
-            <textarea
-              id="additionalNotes"
-              name="additionalNotes"
-              value={formData.additionalNotes}
-              onChange={handleChange}
-              rows="3"
-              className="form-textarea"
-              placeholder="Any additional information you'd like to share..."
+              placeholder="Please tell me a bit more about your product and brand"
             />
           </div>
         </section>
