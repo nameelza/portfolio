@@ -16,10 +16,62 @@ const Contact = () => {
     numberOfShots: "",
     productDescription: "",
   });
+  const [status, setStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: null,
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
+    setStatus({ submitting: true, submitted: false, error: null });
+
+    // Add access key to formData
+    formData.access_key = "5de73001-e48a-4e5a-a1ae-e30c43b73bad";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setStatus({
+          submitting: false,
+          submitted: true,
+          error: null,
+        });
+        setFormData({
+          // Client Information
+          name: "",
+          email: "",
+          message: "",
+
+          // Project Details
+          deadline: "",
+          budget: "",
+
+          // Shoot Details
+          numberOfShots: "",
+          productDescription: "",
+        });
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus({
+        submitting: false,
+        submitted: false,
+        error:
+          "Failed to send message. Please try again or contact directly via email.",
+      });
+    }
+
     console.log(formData);
   };
 
@@ -48,10 +100,10 @@ const Contact = () => {
 
       <div className="contact-container">
         <div className="contact-description">
-          I'd love to hear from you! Feel free to fill out the intake form or
-          email me directly at lizasvirshchyk@gmail.com and I'll be reaching
-          back to you within 2 business days. Looking forward to learning more
-          about your project!
+          I’d love to hear from you! Feel free to fill out the intake form, or
+          reach out to me directly at lizasvirshchyk@gmail.com. I’ll get back to
+          you within 2 business days. Looking forward to learning more about
+          your project and how I can help bring it to life!
         </div>
         <form onSubmit={handleSubmit} className="form-section">
           {/* Client Information Section */}
@@ -178,9 +230,21 @@ const Contact = () => {
             </div>
           </section>
 
-          <button type="submit" className="submit-button">
-            Submit Inquiry
+          <button
+            type="submit"
+            className="submit-button"
+            disabled={status.submitting}
+          >
+            {status.submitting ? "Sending..." : "Submit Inquiry"}
           </button>
+
+          {status.submitted && (
+            <div className="success-message">
+              Thank you for your inquiry! I'll get back to you soon.
+            </div>
+          )}
+
+          {status.error && <div className="error-message">{status.error}</div>}
         </form>
       </div>
     </>

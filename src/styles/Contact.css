@@ -121,3 +121,8 @@
     transform: translateX(-50%);
   }
 }
+
+.success-message,
+.error-message {
+  padding-top: 2rem;
+}

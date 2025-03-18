@@ -43,6 +43,7 @@ nav {
   text-decoration-thickness: 2px;
   text-decoration-color: #194027;
   text-underline-offset: 6px;
+  cursor: pointer;
 }
 
 /* .contact-button {
@@ -373,6 +374,7 @@ footer {
   gap: 20px;
   justify-content: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .column {
@@ -380,6 +382,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-bottom: 20px;
 }
 
 .img-placeholder {
