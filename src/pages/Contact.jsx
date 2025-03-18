@@ -6,22 +6,15 @@ const Contact = () => {
     // Client Information
     name: "",
     email: "",
-    company: "",
-    phone: "",
+    message: "",
 
     // Project Details
     deadline: "",
     budget: "",
 
     // Shoot Details
-    numberOfProducts: "",
     numberOfShots: "",
-    locationPreference: "studio", // Default value
     productDescription: "",
-
-    // Additional Information
-    referenceImages: "",
-    additionalNotes: "",
   });
 
   const handleSubmit = (e) => {
@@ -78,14 +71,14 @@ const Contact = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="productDescription" className="form-label">
+            <label htmlFor="message" className="form-label">
               Message
               <small className="contact-small"> (required)</small>
             </label>
             <textarea
-              id="productDescription"
-              name="productDescription"
-              value={formData.productDescription}
+              id="message"
+              name="message"
+              value={formData.message}
               onChange={handleChange}
               required
               rows="4"
