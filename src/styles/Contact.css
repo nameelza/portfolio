@@ -42,6 +42,7 @@
   padding: 0.5rem;
   border: 1px solid #e5e7eb;
   border-radius: 0.25rem;
+  box-sizing: border-box;
 }
 
 .form-textarea {
@@ -67,4 +68,8 @@
   .form-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.contact-small {
+  color: rgb(187, 175, 154);
 }

@@ -46,7 +46,8 @@ const Contact = () => {
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="name" className="form-label">
-                Name *
+                Name
+                <small className="contact-small"> (required)</small>
               </label>
               <input
                 type="text"
@@ -61,7 +62,8 @@ const Contact = () => {
 
             <div className="form-group">
               <label htmlFor="email" className="form-label">
-                Email *
+                Email
+                <small className="contact-small"> (required)</small>
               </label>
               <input
                 type="email"
@@ -79,77 +81,38 @@ const Contact = () => {
         {/* Project Details Section */}
         <section className="form-section">
           <h2 className="section-title">Project Details</h2>
+          <div className="form-group">
+            <label htmlFor="deadline" className="form-label">
+              Timeline
+              <small className="contact-small"> (required)</small>
+            </label>
+            <input
+              id="deadline"
+              name="deadline"
+              value={formData.deadline}
+              onChange={handleChange}
+              className="form-input"
+              placeholder="When do you need these images?"
+            />
+          </div>
 
-          <div className="form-grid">
-            {/* <div className="form-group">
-              <label htmlFor="projectType" className="form-label">
-                Project Type *
-              </label>
-              <select
-                id="projectType"
-                name="projectType"
-                value={formData.projectType}
-                onChange={handleChange}
-                required
-                className="form-select"
-              >
-                <option value="product">Product Photography</option>
-                <option value="food">Food Photography</option>
-                <option value="jewelry">Jewelry Photography</option>
-                <option value="fashion">Fashion Photography</option>
-                <option value="other">Other</option>
-              </select>
-            </div> */}
-
-            <div className="form-group">
-              <label htmlFor="deadline" className="form-label">
-                Desired Completion Date
-              </label>
-              <input
-                type="date"
-                id="deadline"
-                name="deadline"
-                value={formData.deadline}
-                onChange={handleChange}
-                className="form-input"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="budget" className="form-label">
-                Budget Range
-              </label>
-              <select
-                id="budget"
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                className="form-select"
-              >
-                <option value="">Select a range</option>
-                <option value="under1000">Under $1,000</option>
-                <option value="1000-2500">$1,000 - $2,500</option>
-                <option value="2500-5000">$2,500 - $5,000</option>
-                <option value="5000plus">$5,000+</option>
-              </select>
-            </div>
-
-            {/* <div className="form-group">
-              <label htmlFor="locationPreference" className="form-label">
-                Location Preference
-              </label>
-              <select
-                id="locationPreference"
-                name="locationPreference"
-                value={formData.locationPreference}
-                onChange={handleChange}
-                className="form-select"
-              >
-                <option value="studio">Studio</option>
-                <option value="onLocation">On Location</option>
-                <option value="flexible">Flexible</option>
-              </select>
-            </div> */}
+          <div className="form-group">
+            <label htmlFor="budget" className="form-label">
+              Budget Range
+            </label>
+            <select
+              id="budget"
+              name="budget"
+              value={formData.budget}
+              onChange={handleChange}
+              className="form-select"
+            >
+              <option value="">Select a range</option>
+              <option value="1000-2500">$1,000 - $2,500</option>
+              <option value="2500-5000">$2,500 - $5,000</option>
+              <option value="5000-10000">$5,000 - $10,000</option>
+              <option value="10000plus">$10,000+</option>
+            </select>
           </div>
         </section>
 
